@@ -1,0 +1,1 @@
+web: gunicorn sainishadi.wsgi --log-file -
