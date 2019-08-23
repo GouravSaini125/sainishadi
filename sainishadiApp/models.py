@@ -58,7 +58,7 @@ class User(AbstractUser):
     height_foot = models.IntegerField(null=True,blank=True)
     height_inch = models.IntegerField(null=True,blank=True)
     colour = models.CharField(max_length=6,choices=COLOUR,default='',blank=True)
-    physique = models.CharField(max_length=6,choices=PHY,default='',blank=True)
+    physique = models.CharField(max_length=7,choices=PHY,default='',blank=True)
     registered =  models.BooleanField(default=False)
     city =  models.CharField(max_length=20,default='',blank=True)
     state =  models.CharField(max_length=20,default='',blank=True)
