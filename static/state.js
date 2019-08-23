@@ -1,6 +1,4 @@
-$(document).ready(function() {
-    alert();
-})
+
 
 var handles = ["SELECT STATE","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Dadra and Nagar Haveli","Daman and Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka",
                                         "Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Orissa","Puducherry","Punjab", "Rajasthan","Sikkim","Tamil Nadu",
@@ -9,13 +7,18 @@ var handles = ["SELECT STATE","Andhra Pradesh","Arunachal Pradesh","Assam","Biha
 $(function() {
   var options = '';
   for (var i = 0; i < handles.length; i++) {
-      options += '<option value="' + handles[i] + '">' + handles[i] + '</option>';
-  }
+      if(i==0)
+      options += '<option value="">' + handles[i] + '</option>';
+    else
+    options += '<option value="' + handles[i] + '">' + handles[i] + '</option>';
+
+    }
   $('#listBox').html(options);
+  
 });
 function selct_district($val)
 {
-    if($val=='SELECT STATE') {
+    if($val=='') {
    var options = '';
   $('#secondlist').html(options);
   }
@@ -313,7 +316,7 @@ function selct_district($val)
   }
   
   if ($val=='Rajasthan') {
-    var rajasthan = ["Ajmer","Banswara","Barmer","Barmer Rail Station","Basni","Beawar","Bharatpur","Bhilwara","Bhiwadi","Bikaner","Bongaigaon","Boranada, Jodhpur","Chittaurgarh","Fazilka","Ganganagar","Jaipur","Jaipur-Kanakpura",
+    var rajasthan = ["Ajmer","Alwar","Banswara","Barmer","Barmer Rail Station","Basni","Beawar","Bharatpur","Bhilwara","Bhiwadi","Bikaner","Bongaigaon","Boranada, Jodhpur","Chittaurgarh","Fazilka","Ganganagar","Jaipur","Jaipur-Kanakpura",
                                        "Jaipur-Sitapura","Jaisalmer","Jodhpur","Jodhpur-Bhagat Ki Kothi","Jodhpur-Thar","Kardhan","Kota","Munabao Rail Station","Nagaur","Rajsamand","Sawaimadhopur","Shahdol","Shimoga","Tonk","Udaipur"];
    $(function() {
   var options = '';

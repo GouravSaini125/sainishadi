@@ -2063,9 +2063,7 @@ ul.simplefilter {
             user-select: none;
   }
   
-  .s010 form .inner-form .advance-search .choices.valid .choices__inner {
-    background: linear-gradient(to right, #2c6dd5 0%, #2c6dd5 28%, #ff4b5a 91%, #ff4b5a 100%);
-  }
+
   
   .s010 form .inner-form .advance-search .choices.valid:after {
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg fill='%23fff' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3e%3cpath d='M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z'/%3e%3c/svg%3e");
@@ -2456,3 +2454,12 @@ ul.simplefilter {
     opacity: .5;
   }
   
+
+.payment {
+    height: 98vh;
+    width: 98vw;
+    padding-top: 30vh;
+    text-align: center;
+    color: #fff;
+  background: linear-gradient(to right, #2c6dd5 0%, #2c6dd5 28%, #ff4b5a 91%, #ff4b5a 100%);
+}
