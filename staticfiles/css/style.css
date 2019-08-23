@@ -1424,11 +1424,8 @@ h3.agileits-title {
 }
 @media(max-width:480px){ 
 span.menu {
-    display: block;
-    padding: 1em;
-    color: #fff;
-    background: #00bcd4;
-    font-size: 1.1em;
+    padding: 0.5em;
+    font-size: 0.2em;
     cursor: pointer;
 }
 .top-nav { 
@@ -1440,22 +1437,11 @@ span.menu {
 .agile-logo h1, .agile-logo h2 {
     font-size: 2.8em;
 }
-.top-nav ul.w3l {
-    display: none;
-    position: absolute;
-    background: #000;
-    width: 100%;
-}
+
 .top-nav ul li {
-    display: block;
     margin: 0;
 }
-.top-nav ul li a {
-    width: 100%;
-    height: inherit; 
-    padding: 1em 0;
-    border-radius: 0;
-}
+
 .top-nav ul li a span:before { 
     -webkit-border-radius: 0; 
     -moz-border-radius: 0; 
