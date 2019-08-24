@@ -255,7 +255,7 @@ def register(request):
             'INDUSTRY_TYPE_ID':'Retail',
             'WEBSITE':'WEBSTAGING',
             'CHANNEL_ID':'WEB',
-	        'CALLBACK_URL':'http://localhost:8000/handlerequest/',
+            'CALLBACK_URL':'http://sainishadi.herokuapp.com/handlerequest/',
         }
     param_dict['CHECKSUMHASH'] = Checksum.generate_checksum(param_dict, MERCHANT_KEY)
     return render(request, 'paytm.html' , {'param_dict' : param_dict})
