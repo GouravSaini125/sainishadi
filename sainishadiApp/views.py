@@ -168,6 +168,7 @@ def edit(request):
         user.job_type = request.POST['job_type']
         user.job_desc = request.POST['job_desc']
         user.manglik = request.POST['manglik']
+        user.status = request.POST['status']
         user.self_gotra = request.POST['self_gotra']
         user.mother_gotra = request.POST['mother_gotra']
         user.dadi_gotra = request.POST['dadi_gotra']
