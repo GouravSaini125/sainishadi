@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from .models import User,Register
 from django.contrib import auth
+from django.contrib.auth.decorators import login_required
 from django.template.loader import render_to_string
 
 def home(request):
@@ -64,12 +65,12 @@ def login(request):
 
 def forget(request):
     if request.method == 'POST':
-            # try:
-            #     request.session['otp_verify']
-            # except:
-            #     response_data = {'Message':'Please Enter your no. and verify with OTP'}
-            #     return JsonResponse(response_data)
-            # if request.session['otp_verify'] == 'yes':
+            try:
+                request.session['otp_verify']
+            except:
+                response_data = {'Message':'Please Enter your no. and verify with OTP'}
+                return JsonResponse(response_data)
+            if request.session['otp_verify'] == 'yes':
                 if request.POST['password1']==request.POST['password2']:
                     try:
                         user = User.objects.get(username=request.POST['username'],mobile=int(request.POST['phone_number']))
@@ -87,9 +88,9 @@ def forget(request):
                     response_data = {'Message':'Password didn\'t match..'}
                     return JsonResponse(response_data)
             
-            # else:
-            #     response_data = {'Message':'Please verify your number..'}
-            #     return JsonResponse(response_data)
+            else:
+                response_data = {'Message':'Please verify your number..'}
+                return JsonResponse(response_data)
     else:
         return render(request, 'forget.html')
 
@@ -113,6 +114,7 @@ def delete(request):
     user.delete()
     return redirect('home')
 
+@login_required(login_url='login')
 def search(request):
     if request.method == 'POST':
         if not request.user.registered:
@@ -168,7 +170,6 @@ def edit(request):
         user.job_type = request.POST['job_type']
         user.job_desc = request.POST['job_desc']
         user.manglik = request.POST['manglik']
-        user.status = request.POST['status']
         user.self_gotra = request.POST['self_gotra']
         user.mother_gotra = request.POST['mother_gotra']
         user.dadi_gotra = request.POST['dadi_gotra']
@@ -249,7 +250,7 @@ def register(request):
             'INDUSTRY_TYPE_ID':'Retail',
             'WEBSITE':'WEBSTAGING',
             'CHANNEL_ID':'WEB',
-	        'CALLBACK_URL':'http://sainishadi.herokuapp.com/handlerequest/',
+	        'CALLBACK_URL':'http://localhost:8000/handlerequest/',
         }
     param_dict['CHECKSUMHASH'] = Checksum.generate_checksum(param_dict, MERCHANT_KEY)
     return render(request, 'paytm.html' , {'param_dict' : param_dict})
