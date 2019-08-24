@@ -279,7 +279,4 @@ def handlerequest(request):
             reg.save()
             USER.registered = True
             USER.save()
-          
-        else:
-         
     return render(request, 'paystatus.html',{'response':response_dict})
