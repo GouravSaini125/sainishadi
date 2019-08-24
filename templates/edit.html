@@ -74,49 +74,28 @@
                                   <textarea class="form-control" id="address" placeholder="somewhere" title="enter your Address" name="address" required>{{user.address}}</textarea>
                               </div>
                           </div>
-                            <div class="form-group">
-                                <div class="col-xs-6">
-                                    <h3>Gotra Info</h3>
-                                    <br>
-                                  <label for="self_gotra"><h4>Self Gotra</h4></label>
-                                    <input type="text" class="form-control" name="self_gotra" id="self_gotra" placeholder="Self Gotra" title="enter your gotra." value="{{user.self_gotra}}">
-                                </div></div>
+                            
                                 <div class="form-group">
                                   <div class="col-xs-6"><br>
                                     <label for="edu"><h4>Education</h4></label>
                                       <textarea class="form-control" name="edu" id="edu" placeholder="education" title="enter your education." required>{{user.edu}}</textarea>
                                   </div></div>
                                     
-                                    <div class="form-group">
-                          
-                                        <div class="col-xs-6">
-                                          <label for="dadi_gotra"><h4>Dadi Gotra</h4></label>
-                                            <input type="text" class="form-control" name="dadi_gotra" id="dadi_gotra" placeholder="dadi gotra" title="enter your dadi gotra." value="{{user.dadi_gotra}}">
-                                        </div></div>
+                                   
                                         <div class="form-group">
                           
                                           <div class="col-xs-6">
                                             <label for="job_desc"><h4>Job Description</h4></label>
                                             <textarea class="form-control" name="job_desc" id="job_desc" placeholder="Job Description" title="enter your job description." required>{{user.job_desc}}</textarea>
                                             </div></div>
-                                            <div class="form-group">
-                          
-                                              <div class="col-xs-6">
-                                                <label for="mother_gotra"><h4>Mother Gotra</h4></label>
-                                                  <input type="text" class="form-control" name="mother_gotra" id="mother_gotra" placeholder="mother gotra" title="enter your mother gotra." value="{{user.mother_gotra}}">
-                                              </div></div>
+                                            
                                               <div class="form-group">
                                                 <div class="col-xs-6">
                                                 <label for="height"><h4>Height</h4></label><br>
                                                 <input type="text" class="form-control" name="feet" id="height" placeholder="feet" title="enter your Height Feet." style="width: 40%;display: inline;" value="{{user.height_foot}}">
                                               <input type="text" class="form-control" name="inch" id="inch" placeholder="Inch" title="enter your Height inch." style="width: 40%;display: inline;" value="{{user.height_inch}}">
                                              </div></div>
-                                                                           <div class="form-group">
-                                              <div class="col-xs-6">
-                                                <label for="nani_gotra"><h4>Nani Gotra</h4></label>
-                                                  <input type="text" class="form-control" name="nani_gotra" id="nani_gotra" placeholder="nani gotra" title="enter your nani gotra." value="{{user.nani_gotra}}">
-                                                 
-                                               </div></div>
+                                                                          
                                                <div class="form-group">
                                                   <div class="col-xs-6">
                                                     <label for="state"><h4>State</h4></label>
@@ -272,15 +251,41 @@
                                           </fieldset>
                                           </div></div>
 
-                      <div class="form-group">
-                           <div class="col-xs-12">
-                                <br>
-                              	<button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
-                            </div>
-                      </div>
+                      
                       {% csrf_token %}
-                    </div><!--/tab-pane-->
-               
+                    </div><!--/tab-pane--><div>
+                        <h3>Gotra Info</h3>
+                            <br>
+                    <div class="form-group">
+                        <div class="col-xs-6">
+                          
+                          <label for="self_gotra"><h4>Self Gotra</h4></label>
+                            <input type="text" class="form-control" name="self_gotra" id="self_gotra" placeholder="Self Gotra" title="enter your gotra." value="{{user.self_gotra}}">
+                        </div></div>
+                        <div class="form-group">
+                          
+                            <div class="col-xs-6">
+                              <label for="mother_gotra"><h4>Mother Gotra</h4></label>
+                                <input type="text" class="form-control" name="mother_gotra" id="mother_gotra" placeholder="mother gotra" title="enter your mother gotra." value="{{user.mother_gotra}}">
+                            </div></div>
+                            <div class="form-group">
+                          
+                                <div class="col-xs-6">
+                                  <label for="dadi_gotra"><h4>Dadi Gotra</h4></label>
+                                    <input type="text" class="form-control" name="dadi_gotra" id="dadi_gotra" placeholder="dadi gotra" title="enter your dadi gotra." value="{{user.dadi_gotra}}">
+                                </div></div>
+                                <div class="form-group">
+                                    <div class="col-xs-6">
+                                      <label for="nani_gotra"><h4>Nani Gotra</h4></label>
+                                        <input type="text" class="form-control" name="nani_gotra" id="nani_gotra" placeholder="nani gotra" title="enter your nani gotra." value="{{user.nani_gotra}}">
+                                       
+                                     </div></div></div>
+                                     <div class="form-group">
+                                        <div class="col-xs-12">
+                                             <br>
+                                             <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                                         </div>
+                                   </div>
                   </div><!--/tab-pane-->
               </div><!--/tab-content-->
     
