@@ -106,7 +106,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					{% if user.is_authenticated %}
 					<li><a href="{% url 'profile' %}"><span>Profile</span></a></li>
 					<li><a href="{% url 'logout' %}"><span>Logout {{user.username}}</span></a></li>
-					{% if not user.registered %}
+					{% if not user.registered and user.published %}
 					<li><a href="{% url 'register' %}"><span>Register</span></a></li>
 					{% endif %}
 					{% else %}

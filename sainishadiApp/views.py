@@ -56,8 +56,11 @@ def login(request):
             except:
                 user = None
         if user is not None:
-            auth.login(request,user)  
-            return redirect('home')
+            auth.login(request,user)
+            if user.published:  
+                return redirect('home')
+            else:
+                return redirect('edit')
         else:
             return render(request,'login.html',{'error':'Username or Password is incorrect..'})
     else:
@@ -191,7 +194,7 @@ def edit(request):
             user.height_inch = request.POST['inch']
         user.published = True
         user.save()
-        return redirect('edit')
+        return redirect('profile')
     else:
         return render(request,'edit.html')
 
@@ -239,6 +242,8 @@ USER = ''
 def register(request):
     if request.user.registered:
         return redirect('home')
+    if not request.user.published:  
+        return redirect('edit')
     reg = Register.objects.create(user=request.user)
     global USER
     USER = request.user

@@ -60,6 +60,7 @@ class User(AbstractUser):
     colour = models.CharField(max_length=6,choices=COLOUR,default='',blank=True)
     physique = models.CharField(max_length=7,choices=PHY,default='',blank=True)
     registered =  models.BooleanField(default=False)
+    published =  models.BooleanField(default=False)
     city =  models.CharField(max_length=20,default='',blank=True)
     state =  models.CharField(max_length=20,default='',blank=True)
 
