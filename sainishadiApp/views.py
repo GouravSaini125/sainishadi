@@ -104,6 +104,7 @@ def logout(request):
 def profile(request):
     return render(request,'profile.html')
 
+@login_required(login_url='login')
 def detail(request,id):
     if not request.user.registered:
             return render(request,'result.html',{'error':'Please get registered with sainishadi.com to view profiles. Click on Register in Main Menu.'})
@@ -169,6 +170,7 @@ def edit(request):
         user.father_name = request.POST['father_name']
         user.last_name = request.POST['last_name']
         user.email = request.POST['email']
+        user.status = request.POST['status']
         user.gender = request.POST['gender']
         user.job_type = request.POST['job_type']
         user.job_desc = request.POST['job_desc']
@@ -277,7 +279,7 @@ def handlerequest(request):
             reg.save()
             USER.registered = True
             USER.save()
-            print('DonE')
+          
         else:
-            print('Failed'+response_dict['RESPMSG'])
+         
     return render(request, 'paystatus.html',{'response':response_dict})
