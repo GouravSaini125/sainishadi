@@ -253,7 +253,7 @@ def register(request):
             'MID':'tfbWmY61557297752157',
             'ORDER_ID': f'{reg.id}',
             'TXN_AMOUNT':'101',
-            'CUST_ID':request.user.username,
+            'CUST_ID':request.user.username.replace(' ','__'),
             'INDUSTRY_TYPE_ID':'Retail',
             'WEBSITE':'WEBSTAGING',
             'CHANNEL_ID':'WEB',
