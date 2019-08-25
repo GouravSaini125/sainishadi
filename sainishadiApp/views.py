@@ -7,7 +7,7 @@ from django.template.loader import render_to_string
 def home(request):
     profiles = User.objects.all().order_by('-id')
     profiles = profiles.filter(registered = True)
-    profiles = profiles[:4][::-1]
+    profiles = profiles[:4]
     return render(request,'index.html',{'profiles':profiles})
 
 
