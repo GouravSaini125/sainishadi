@@ -5,9 +5,9 @@ from django.contrib.auth.decorators import login_required
 from django.template.loader import render_to_string
 
 def home(request):
-    profiles = User.objects.all()
+    profiles = User.objects.all().order_by('-id')
     profiles = profiles.filter(registered = True)
-    profiles = profiles[:6]
+    profiles = profiles[4::-1]
     return render(request,'index.html',{'profiles':profiles})
 
 
